@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h1jg$mu(ssda=)(%8zd$_t^!ydq*q5ubto4(cu5k6w)yb9$pbb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -131,3 +131,8 @@ LOGIN_URL = '/users/login/'
 # Настройки Heroku
 import django_heroku
 django_heroku.settings(locals())
+
+if os.environ.get('DEBUG') == 'TRUE':
+    DEBUG = True
+elif os.environ.get('DEBUG') == 'FALSE':
+    DEBUG = Falsegit commit -am "Set DEBUG based on environment variables."
