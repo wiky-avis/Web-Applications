@@ -131,8 +131,3 @@ LOGIN_URL = '/users/login/'
 # Настройки Heroku
 import django_heroku
 django_heroku.settings(locals())
-
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = Falsegit commit -am "Set DEBUG based on environment variables."
